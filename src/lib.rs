@@ -1,3 +1,4 @@
+pub mod create;
 
 use std::sync::{Mutex, Arc};
 use std::ops::Deref;
@@ -35,41 +36,6 @@ pub enum Slot {
     FnStringArray(FnStringArray),
 }
 
-pub fn create_none_slot(func: Box<dyn Fn() -> Result<(), String> + Send + Sync + 'static>) -> FnNone {
-    Arc::new(Mutex::new(func))
-}
-
-pub fn create_int_slot(func: Box<dyn Fn(i32) -> Result<(), String> + Send + Sync + 'static>) -> FnInt {
-    Arc::new(Mutex::new(func))
-}
-
-pub fn create_int_array_slot(func: Box<dyn Fn(Vec<i32>) -> Result<(), String> + Send + Sync + 'static>) -> FnIntArray {
-    Arc::new(Mutex::new(func))
-}
-
-pub fn create_float_slot(func: Box<dyn Fn(f32) -> Result<(), String> + Send + Sync + 'static>) -> FnFloat {
-    Arc::new(Mutex::new(func))
-}
-
-pub fn create_float_array_slot(func: Box<dyn Fn(Vec<f32>) -> Result<(), String> + Send + Sync + 'static>) -> FnFloatArray {
-    Arc::new(Mutex::new(func))
-}
-
-pub fn create_bool_slot(func: Box<dyn Fn(bool) -> Result<(), String> + Send + Sync + 'static>) -> FnBool {
-    Arc::new(Mutex::new(func))
-}
-
-pub fn create_bool_array_slot(func: Box<dyn Fn(Vec<bool>) -> Result<(), String> + Send + Sync + 'static>) -> FnBoolArray {
-    Arc::new(Mutex::new(func))
-}
-
-pub fn create_string_slot(func: Box<dyn Fn(String) -> Result<(), String> + Send + Sync + 'static>) -> FnString {
-    Arc::new(Mutex::new(func))
-}
-
-pub fn create_string_array_slot(func: Box<dyn Fn(Vec<String>) -> Result<(), String> + Send + Sync + 'static>) -> FnStringArray {
-    Arc::new(Mutex::new(func))
-}
 
 #[derive(Clone)]
 pub enum SlotArgs {
