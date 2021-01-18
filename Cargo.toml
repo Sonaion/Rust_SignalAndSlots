@@ -1,5 +1,5 @@
 [package]
-name = "rust_signal_and_slots"
+name = "sigs_slots"
 version = "0.1.0"
 authors = ["Jonas Mucke <jonas.mucke@web.de>"]
 edition = "2018"

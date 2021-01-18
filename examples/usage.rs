@@ -1,5 +1,5 @@
 use std::sync::{Arc, Mutex};
-use rust_signal_and_slots::*;
+use sigs_slots::*;
 
 fn hello() -> Result<(), String>{
     println!("was geht abbbb");
