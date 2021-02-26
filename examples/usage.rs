@@ -59,8 +59,8 @@ fn main() {
     //usage of methods
 
     let lol1 = Arc::new(Mutex::new(Lol::new(42)));
-    let print_method_slot = create::none_method_slot::<Lol>(Box::new(Lol::print), Arc::clone(&lol1));
-    let print_method_add_slot = create::int_method_slot::<Lol>(Box::new(Lol::print_add), Arc::clone(&lol1));
+    let print_method_slot = create::none_method_slot(Box::new(Lol::print), Arc::clone(&lol1));
+    let print_method_add_slot = create::int_method_slot(Box::new(Lol::print_add), Arc::clone(&lol1));
 
     handler.connect(String::from("print_method"), print_method_slot);
     handler.connect(String::from("print_method"), print_method_add_slot.clone());
